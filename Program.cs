@@ -7,7 +7,17 @@ namespace expression_members
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Bug bug1 = new Bug("Francine", "spider", new List<string>(){"cats", "Cara", "Sophie"}, new List<string>(){"flies", "plants", "other spiders"});
+            Bug bug2 = new Bug("Harold", "grasshopper", new List<string>(){"dogs", "snakes", "birds"}, new List<string>(){"flies", "grass", "tomatoes"});
+            Bug bug3 = new Bug("Arthur", "ladybug", new List<string>(){"cars", "doorways", "car doors"}, new List<string>(){"dirt", "leaves", "asphalt"});
+            
+            Console.WriteLine($"Bug #1 is {bug1.Name}. She is a {bug1.Species}. Her predators are {bug1.PredatorList()}. Her prey are {bug1.PreyList()}.");
+            Console.WriteLine($"Bug #2 is {bug2.Name}. He is a {bug2.Species}. His predators are {bug2.PredatorList()}. His prey are {bug2.PreyList()}.");
+            Console.WriteLine($"Bug #3 is {bug3.Name}. He is a {bug3.Species}. His predators are {bug3.PredatorList()}. His prey are {bug3.PreyList()}.");
+        
+            Console.WriteLine($"{bug1.FormalName} is afraid of {bug1.PredatorList()}. She enjoys eating {bug1.PreyList()}.");
+            Console.WriteLine($"Would Arthur eat leaves? {bug3.Eat("leaves")}");
+            Console.WriteLine($"Would Harold eat pizza? {bug2.Eat("pizza")}");
         }
     }
 }
